@@ -1,0 +1,247 @@
+[
+    {
+        "id": "f3a1c2b7",
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z",
+        "name": "Arizona State University",
+        "logoUrl": "/logos/placeholder.png",
+        "websiteUrl": "https://www.asu.edu/",
+        "type": "school",
+        "schoolType": "university",
+        "location": {
+            "bbox": [-72.777884, 46.252887, -72.406854, 46.469059],
+
+            "coordinates": { "lat": 46.341824, "lng": -72.540504 },
+            "country": {
+                "countryCode": "CAN",
+                "countryName": "Canada"
+            },
+            "longname": "Trois-Rivières, Quebec, Canada",
+            "mapboxId": "dXJuOm1ieHBsYzpCTllvSnc",
+            "region": {
+                "regionCode": "QC",
+                "regionName": "Quebec"
+            },
+            "shortname": "Trois-Rivières"
+        },
+        "contacts": [
+            {
+                "firstname": "Peter",
+                "lastname": "Carpenter",
+                "email": "peter.carpenter@mcgill.ca",
+                "type": "coach",
+                "sport_en": "Men's Swimming",
+                "sport_fr": "Natation masculine"
+            },
+            {
+                "firstname": "Savannah",
+                "lastname": "King",
+                "email": "savannah.king@mcgill.ca",
+                "type": "coach",
+                "sport_en": "Women's Swimming",
+                "sport_fr": "Natation féminine"
+            }
+        ]
+    },
+    {
+        "id": "e9d4a8f2",
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z",
+        "name": "Université du Québec à Trois-Rivières (UQTR)",
+        "logoUrl": "/logos/placeholder.png",
+        "websiteUrl": "https://www.uqtr.ca/",
+        "type": "school",
+        "schoolType": "university",
+        "location": "Trois-Rivières, QC",
+        "contacts": []
+    },
+    {
+        "id": "b7c5e1a3",
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z",
+        "name": "McGill University",
+        "logoUrl": "/logos/placeholder.png",
+        "websiteUrl": "https://www.mcgill.ca/",
+        "type": "school",
+        "schoolType": "university",
+        "location": "Montreal, QC",
+        "contacts": []
+    },
+    {
+        "id": "d2e8f6c4",
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z",
+        "name": "LHJMQ",
+        "logoUrl": "/logos/placeholder.png",
+        "websiteUrl": "https://chl.ca/lhjmq/en/",
+        "type": "league",
+        "location": "Montreal, QC",
+        "contacts": []
+    },
+    {
+        "id": "a4b9d7e5",
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z",
+        "name": "uOttawa",
+        "logoUrl": "/logos/placeholder.png",
+        "websiteUrl": "https://www.uottawa.ca/en",
+        "type": "school",
+        "schoolType": "university",
+        "location": "Ottawa, ON",
+        "contacts": []
+    },
+    {
+        "id": "c1f7e3b6",
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z",
+        "name": "University of Toronto",
+        "logoUrl": "/logos/placeholder.png",
+        "websiteUrl": "https://www.utoronto.ca/",
+        "type": "school",
+        "schoolType": "university",
+        "location": "Toronto, ON",
+        "contacts": []
+    },
+    {
+        "id": "e6a2b8d9",
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z",
+        "name": "University of California, Berkeley",
+        "logoUrl": "/logos/placeholder.png",
+        "websiteUrl": "https://www.berkeley.edu/",
+        "type": "school",
+        "schoolType": "university",
+        "location": "Berkeley, CA",
+        "contacts": []
+    },
+    {
+        "id": "f8c3d1a7",
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z",
+        "name": "Université de Montréal",
+        "logoUrl": "/logos/placeholder.png",
+        "websiteUrl": "https://www.umontreal.ca/",
+        "type": "school",
+        "schoolType": "university",
+        "location": "Montreal, QC",
+        "contacts": []
+    },
+    {
+        "id": "b2e5f9c8",
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z",
+        "name": "University of Michigan",
+        "logoUrl": "/logos/placeholder.png",
+        "websiteUrl": "https://umich.edu/",
+        "type": "school",
+        "schoolType": "university",
+        "location": "Ann Arbor, MI",
+        "contacts": []
+    },
+    {
+        "id": "d7a6c4e2",
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z",
+        "name": "Simon Fraser University",
+        "logoUrl": "/logos/placeholder.png",
+        "websiteUrl": "https://www.sfu.ca/",
+        "type": "school",
+        "schoolType": "university",
+        "location": "Burnaby, BC",
+        "contacts": []
+    },
+    {
+        "id": "a9f1b3d6",
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z",
+        "name": "OHL",
+        "logoUrl": "/logos/placeholder.png",
+        "websiteUrl": "https://ontariohockeyleague.com/",
+        "type": "league",
+        "location": "Toronto, ON",
+        "contacts": []
+    },
+    {
+        "id": "c5e2a8f4",
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z",
+        "name": "Boston University",
+        "logoUrl": "/logos/placeholder.png",
+        "websiteUrl": "https://www.bu.edu/",
+        "type": "school",
+        "schoolType": "university",
+        "location": "Boston, MA",
+        "contacts": []
+    },
+    {
+        "id": "e3b7d9a1",
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z",
+        "name": "Western University",
+        "logoUrl": "/logos/placeholder.png",
+        "websiteUrl": "https://www.uwo.ca/",
+        "type": "school",
+        "schoolType": "university",
+        "location": "London, ON",
+        "contacts": []
+    },
+    {
+        "id": "f2d8c6b4",
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z",
+        "name": "RSEQ",
+        "logoUrl": "/logos/placeholder.png",
+        "websiteUrl": "https://rseq.ca/",
+        "type": "league",
+        "location": "Montreal, QC",
+        "contacts": []
+    },
+    {
+        "id": "b6a4e7c2",
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z",
+        "name": "University of British Columbia",
+        "logoUrl": "/logos/placeholder.png",
+        "websiteUrl": "https://www.ubc.ca/",
+        "type": "school",
+        "schoolType": "university",
+        "location": "Vancouver, BC",
+        "contacts": []
+    },
+    {
+        "id": "d1c8f5a3",
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z",
+        "name": "Carleton University",
+        "logoUrl": "/logos/placeholder.png",
+        "websiteUrl": "https://carleton.ca/",
+        "type": "school",
+        "schoolType": "university",
+        "location": "Ottawa, ON",
+        "contacts": []
+    },
+    {
+        "id": "a7e9b2d5",
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z",
+        "name": "University of Alberta",
+        "logoUrl": "/logos/placeholder.png",
+        "websiteUrl": "https://www.ualberta.ca/",
+        "type": "school",
+        "schoolType": "university",
+        "location": "Edmonton, AB",
+        "contacts": []
+    },
+    {
+        "id": "c8f3a1e6",
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z",
+        "name": "Université Laval",
+        "logoUrl": "/logos/placeholder.png",
+        "websiteUrl": "https://www.ulaval.ca/",
+        "type": "school",
+        "schoolType": "university",
+        "location": "Quebec City, QC",
+        "contacts": []
+    }
+]

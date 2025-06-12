@@ -1,0 +1,108 @@
+[
+    {
+        "id": "evt_001",
+        "createdAt": "2025-05-01T10:00:00Z",
+        "updatedAt": "2025-05-01T10:00:00Z",
+        "name": "Eastern Canada High School Combine",
+
+        "description": "A top-tier combine for elite high school athletes in Eastern Canada to Showcase their skills.",
+        "startDate": "2025-06-15T13:00:00Z",
+        "location": "Montreal, QC",
+        "organizationId": "f3a1c2b7",
+        "organizationName": "Athletics Canada",
+        "websiteUrl": "https://athleticscanada.ca/eastern-combine-2025",
+        "imageUrl": "https://example.com/images/eastern-combine.jpg"
+    },
+    {
+        "id": "evt_002",
+        "createdAt": "2025-04-20T14:30:00Z",
+        "updatedAt": "2025-04-20T14:30:00Z",
+        "name": "Spring Perfectionment Camp - Quebec City",
+        "type": "training_camp",
+        "description": "An intensive 3-day development camp focusing on speed, agility, and tactical decision-making.",
+        "startDate": "2025-06-01T09:00:00Z",
+        "location": "Quebec City, QC",
+        "organizationId": "f3a1c2b7",
+        "organizedBy": "NextGen QC",
+        "websiteUrl": "https://nextgenqc.ca/perfectionment-spring",
+        "imageUrl": "https://example.com/images/perfectionment-qc.jpg"
+    },
+    {
+        "id": "evt_003",
+        "createdAt": "2025-03-18T08:00:00Z",
+        "updatedAt": "2025-03-18T08:00:00Z",
+        "name": "Ottawa Rising Stars Showcase",
+        "type": "showcase",
+        "description": "Invite-only event where the top U17 talents perform in front of collegiate scouts.",
+        "startDate": "2025-07-10T15:00:00Z",
+        "location": "Ottawa, ON",
+        "organizedBy": "Rising Stars Canada",
+        "websiteUrl": "https://risingstars.ca/ottawa-Showcase",
+        "imageUrl": "https://example.com/images/Showcase-ottawa.jpg"
+    },
+    {
+        "id": "evt_004",
+        "createdAt": "2025-05-10T12:45:00Z",
+        "updatedAt": "2025-05-10T12:45:00Z",
+        "name": "Summer Training Camp - Toronto",
+        "type": "training_camp",
+        "description": "A 5-day camp designed to build strength, teamwork, and high-performance habits.",
+        "startDate": "2025-08-01T10:00:00Z",
+        "location": "Toronto, ON",
+        "organizedBy": "Elevate Athletes",
+        "websiteUrl": "https://elevateathletes.ca/summer-camp",
+        "imageUrl": "https://example.com/images/toronto-camp.jpg"
+    },
+    {
+        "id": "evt_005",
+        "createdAt": "2025-05-05T09:00:00Z",
+        "updatedAt": "2025-05-05T09:00:00Z",
+        "name": "AX Community Open Field Day",
+        "type": "other",
+        "description": "An open, fun-focused day with drills, mini-games, and AX athlete meetups.",
+        "startDate": "2025-06-29T11:00:00Z",
+        "location": "Laval, QC",
+        "organizedBy": "AX Team",
+        "imageUrl": "https://example.com/images/open-field.jpg"
+    },
+    {
+        "id": "evt_006",
+        "createdAt": "2025-04-25T11:15:00Z",
+        "updatedAt": "2025-04-25T11:15:00Z",
+        "name": "Western Elite Combine",
+        "type": "combine",
+        "description": "Premier athletic testing combine for Alberta and British Columbia athletes.",
+        "startDate": "2025-06-21T14:00:00Z",
+        "location": "Calgary, AB",
+        "organizationId": "org_elitewest",
+        "organizedBy": "Elite West combine Org",
+        "websiteUrl": "https://elitewest.ca/combine2025",
+        "imageUrl": "https://example.com/images/western-combine.jpg"
+    },
+    {
+        "id": "evt_007",
+        "createdAt": "2025-05-15T13:20:00Z",
+        "updatedAt": "2025-05-15T13:20:00Z",
+        "name": "High Performance Summer Camp",
+        "type": "training_camp",
+        "description": "Train with pro-level coaches and build a championship mindset over 7 days.",
+        "startDate": "2025-07-20T08:30:00Z",
+        "location": "Vancouver, BC",
+        "organizedBy": "Peak Athletics",
+        "websiteUrl": "https://peakathletics.ca/hp-summer-camp",
+        "imageUrl": "https://example.com/images/peak-camp.jpg"
+    },
+    {
+        "id": "evt_008",
+        "createdAt": "2025-05-28T10:30:00Z",
+        "updatedAt": "2025-05-28T10:30:00Z",
+        "name": "AX Athlete Connect Showcase",
+        "type": "showcase",
+        "description": "A curated event where top AX athletes connect directly with recruiters.",
+        "startDate": "2025-08-10T13:00:00Z",
+        "location": "Mississauga, ON",
+        "organizedBy": "AX",
+        "websiteUrl": "https://axplatform.ca/athlete-connect",
+        "imageUrl": "https://example.com/images/ax-connect.jpg"
+    }
+]
