@@ -117,7 +117,7 @@ export const OrganizationForm: FC<OrganizationFormProps> = ({ defaultValues: o, 
                 }
             })
         } else if (action === 'update') {
-            updateOrganization(o?.id!, newOrg).then(res => {
+            updateOrganization(o?.id || '', newOrg).then(res => {
                 if (res.success) {
                     mutate('/organizations')
                     closeModal?.()
@@ -274,7 +274,7 @@ export const OrganizationForm: FC<OrganizationFormProps> = ({ defaultValues: o, 
                         name="contacts"
                         label="Contacts"
                         unit="Contact"
-                        renderItem={(block, index, remove) => (
+                        renderItem={(_, index) => (
                             <div className="space-y-3">
                                 <div className="grid grid-cols-2 gap-3">
                                     <Field name={`contacts.${index}.firstname`} label="First Name" />

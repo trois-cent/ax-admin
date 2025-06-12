@@ -1,6 +1,6 @@
 'use client'
 
-import { useForm } from 'react-hook-form'
+import { SubmitErrorHandler, useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '../ui/form'
 import { Input } from '../ui/input'
@@ -36,7 +36,7 @@ export const AuthForm = () => {
         else setError(req.error || 'Login failed. Please try again.')
     }
 
-    const handleError = (errors: any) => {
+    const handleError: SubmitErrorHandler<{ email: string; password: string }> = (errors) => {
         setError(errors.email?.message || errors.password?.message || 'An error occurred. Please try again.')
     }
 

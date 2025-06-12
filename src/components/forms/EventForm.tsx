@@ -1,7 +1,7 @@
 'use client'
 
 import { FC, useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { SubmitErrorHandler, useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '../ui/form'
@@ -135,7 +135,7 @@ export const EventForm: FC<EventFormProps> = ({ defaultValues: e, action, closeM
                 }
             })
         } else if (action === 'update') {
-            updateEvent(e?.id!, newEvent).then(res => {
+            updateEvent(e?.id || '', newEvent).then(res => {
                 if (res.success) {
                     mutate('/events')
                     closeModal?.()
@@ -156,9 +156,11 @@ export const EventForm: FC<EventFormProps> = ({ defaultValues: e, action, closeM
         })
     }
 
-    const handleNotValid = (errors: any) => {
+    const handleNotValid: SubmitErrorHandler<z.infer<typeof formSchema>> = errors => {
         console.log('Form validation errors:', errors)
-        if (errors.dingdong) {
+        // @ts-expect-error dingdong is a custom error path
+        if (errors?.dingdong) {
+            // @ts-expect-error dingdong is a custom error path
             setOrgIdOrNameError(errors.dingdong.message)
         } else {
             setOrgIdOrNameError(null)

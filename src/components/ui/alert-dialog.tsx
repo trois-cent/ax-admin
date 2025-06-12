@@ -84,11 +84,16 @@ function AlertDialogDescription({
 }
 
 function AlertDialogAction({ className, ...props }: React.ComponentProps<typeof AlertDialogPrimitive.Action>) {
-    return <AlertDialogPrimitive.Action className={'button small full-width active text-black'} {...props} />
+    return (
+        <AlertDialogPrimitive.Action
+            className={cn('button small full-width active text-black', className)}
+            {...props}
+        />
+    )
 }
 
 function AlertDialogCancel({ className, ...props }: React.ComponentProps<typeof AlertDialogPrimitive.Cancel>) {
-    return <AlertDialogPrimitive.Cancel className={'button small full-width'} {...props} />
+    return <AlertDialogPrimitive.Cancel className={cn('button small full-width', className)} {...props} />
 }
 
 export {

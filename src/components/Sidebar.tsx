@@ -23,7 +23,7 @@ const links = [
 ]
 
 export const Sidebar = () => {
-    const { data: user, error: userError, isLoading: userLoading } = useSWR<User>('/users/admin', userFetcher)
+    const { data: user } = useSWR<User>('/users/admin', userFetcher)
 
     const url = usePathname()
 

@@ -36,8 +36,8 @@ const stats: { label: string; key: keyof Stats }[] = [
 ]
 
 export default function Home() {
-    const { data, error, isLoading } = useSWR('/stats', statsFetcher)
-    const { data: user, error: userError, isLoading: userLoading } = useSWR('/users/admin', userFetcher)
+    const { data } = useSWR('/stats', statsFetcher)
+    const { data: user } = useSWR('/users/admin', userFetcher)
 
     useEffect(() => {
         console.log(user)

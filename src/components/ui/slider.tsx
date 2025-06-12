@@ -30,7 +30,7 @@ export default function Slider({ children, paddingX = 24, height = 300, rightCon
         updateConstraints()
         window.addEventListener('resize', updateConstraints)
         return () => window.removeEventListener('resize', updateConstraints)
-    }, [children])
+    }, [children, paddingX])
 
     useEffect(() => {
         const unsubscribe = x.onChange(latestX => {

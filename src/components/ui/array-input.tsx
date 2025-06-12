@@ -2,7 +2,7 @@
 
 import { useFieldArray, useFormContext } from 'react-hook-form'
 import { Label } from '@/components/ui/label'
-import { ChevronsDownUp, Plus, Trash2 } from 'lucide-react'
+import { ChevronsDownUp, Plus } from 'lucide-react'
 import { useState } from 'react'
 import { ConfirmationButton } from './confirmation-button'
 
