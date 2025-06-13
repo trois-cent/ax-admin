@@ -43,8 +43,8 @@ export function middleware(req: NextRequest) {
 
 export const config = {
     matcher: [
-        '/((?!_next|static|favicon.ico|auth).*)',
         // Exclude Next.js static files and API routes
-        // '/((?!_next/static|_next/image|favicon.ico).*)',
+        // '/((?!_next|static|favicon.ico|auth).*)',
+        '/((?!_next|static|favicon.ico|api|auth).*)',
     ],
 }
