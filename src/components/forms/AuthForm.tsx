@@ -32,6 +32,8 @@ export const AuthForm = () => {
 
         // const req = await login(data.email.toLowerCase(), data.password)
 
+        console.log('Loging in...')
+
         const req = await fetch('/api/login', {
             method: 'POST',
             headers: {

@@ -10,6 +10,8 @@ export async function POST(request: Request) {
         return NextResponse.json(apiRes.error, { status: 401, statusText: apiRes.error })
     }
 
+    console.log('Loging in...', apiRes.token)
+
     const response = NextResponse.json({ success: true })
 
     response.cookies.set({
@@ -18,8 +20,7 @@ export async function POST(request: Request) {
         httpOnly: true,
         secure: true,
         sameSite: 'none',
-        domain: '.athlete-x.io', // enables cross-subdomain
-        maxAge: 60 * 60 * 24, // 1 day
+        maxAge: 60 * 60 * 24 * 7, // 7 days
         path: '/',
     })
 
