@@ -37,6 +37,7 @@ export const AuthForm = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
+            credentials: 'include',
             body: JSON.stringify({ email: data.email, password: data.password }),
         })
 
