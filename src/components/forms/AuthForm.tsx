@@ -30,13 +30,21 @@ export const AuthForm = () => {
     const handleSubmit = async (data: z.infer<typeof formSchema>) => {
         setError(null) // Reset error state on new submission
 
-        const req = await login(data.email.toLowerCase(), data.password)
+        // const req = await login(data.email.toLowerCase(), data.password)
 
-        if (req.success) router.push('/')
-        else setError(req.error || 'Login failed. Please try again.')
+        const req = await fetch('/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email: data.email, password: data.password }),
+        })
+
+        if (req.ok) router.push('/')
+        else setError('Login failed. Please check your credentials and try again.')
     }
 
-    const handleError: SubmitErrorHandler<{ email: string; password: string }> = (errors) => {
+    const handleError: SubmitErrorHandler<{ email: string; password: string }> = errors => {
         setError(errors.email?.message || errors.password?.message || 'An error occurred. Please try again.')
     }
 
