@@ -1,6 +1,6 @@
 import { api, rawApi } from './http'
 
-type LoginResult = { success: boolean; token?: string; error?: string }
+type LoginResult = { success: boolean; token?: string; refreshToken?: string; error?: string }
 
 export const login = async (email: string, password: string): Promise<LoginResult> => {
     try {
@@ -8,7 +8,8 @@ export const login = async (email: string, password: string): Promise<LoginResul
 
         if (response.status === 200) {
             const token = response.data?.token
-            return { success: true, error: undefined, token }
+            const refreshToken = response.data?.refreshToken
+            return { success: true, error: undefined, token, refreshToken }
         } else {
             return { success: false, error: response.data?.message || 'Login failed.' }
         }

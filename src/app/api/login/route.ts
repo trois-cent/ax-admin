@@ -6,7 +6,7 @@ export async function POST(request: Request) {
 
     const apiRes = await login(body.email, body.password)
 
-    if (!apiRes.success || !apiRes.token) {
+    if (!apiRes.success || !apiRes.token || !apiRes.refreshToken) {
         return NextResponse.json(apiRes.error, { status: 401, statusText: apiRes.error })
     }
 
@@ -23,6 +23,16 @@ export async function POST(request: Request) {
         domain: '.athlete-x.io',
         maxAge: 60 * 60 * 24 * 7, // 7 days
         path: '/',
+    })
+
+    response.cookies.set({
+        name: 'refreshToken',
+        value: apiRes.refreshToken,
+        httpOnly: true,
+        secure: true,
+        sameSite: 'none',
+        domain: '.athlete-x.io',
+        maxAge: 60 * 60 * 24 * 30,
     })
 
     return response
