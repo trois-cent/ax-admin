@@ -20,6 +20,7 @@ export async function POST(request: Request) {
         httpOnly: true,
         secure: true,
         sameSite: 'none',
+        domain: '.athlete-x.io',
         maxAge: 60 * 60 * 24 * 7, // 7 days
         path: '/',
     })
