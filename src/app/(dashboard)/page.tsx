@@ -81,12 +81,12 @@ export default function Home() {
                             className="relative card h-full aspect-square flex items-center justify-center"
                             key={stat.key}
                         >
-                            {data && data[stat.key] && (
+                            {data && (data[stat.key] || data[stat.key] === 0) && (
                                 <Counter
                                     delay={0.1 + i * 0.07}
                                     duration={0.75}
                                     className="text-[86px] font-semibold text-accent"
-                                    to={data[stat.key]}
+                                    to={Number(data[stat.key])}
                                 />
                             )}
                             <p className="absolute bottom-8 left-1/2 -translate-x-1/2">{stat.label}</p>
