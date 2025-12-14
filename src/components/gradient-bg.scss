@@ -30,6 +30,16 @@
                 right: 20%;
                 width: 400px;
             }
+
+            @media screen and (max-width: 768px) {
+                &#blob-1 {
+                    width: 500px;
+                }
+
+                &#blob-2 {
+                    width: 200px;
+                }
+            }
         }
 
         .overlay {

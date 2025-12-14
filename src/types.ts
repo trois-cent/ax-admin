@@ -8,22 +8,66 @@ declare global {
         email: string
     }
 
-    type Organization = {
+    export type Organization = {
+        // fixed properties
         id: string
+        type: OrganizationType // set by Dan, not modifiable by manager
+        name: string // set by Dan, not modifiable by manager
+
+        // basic properties
+        logoUrl?: string // URL to the logo
+        description?: string // short description of the organisation
+        websiteUrl?: string // URL to the organisation's website
+        location?: City // physical address of the organisation
+
+        // seats
+        seats: OrganizationSeat[]
+
+        // if of type school
+        programs?: Program[]
+        publicContacts?: SchoolContact[] // public contacts visible to athletes
+
+        // timestamps
         createdAt: string
         updatedAt: string
-        listed: boolean
-
-        name: string
-        type: OrganizationType
-        schoolType?: SchoolType
-        location: City
-        logoUrl?: string
-        websiteUrl?: string
-        contacts: Contact[]
     }
 
-    type OrganizationType = 'school' | 'league' | 'other'
+    export type OrganizationSeat = {
+        id: string // unique identifier for the seat
+        tools: string[] // list of tools the seat has access to. For now, only "radar" is supported
+        user: {
+            id: string // unique identifier for the user
+            firstName: string // first name of the user
+            lastName: string // last name of the user
+        }
+
+        // status
+        active: boolean // whether the seat is active or not
+        activatedAt: Date // date when the seat starts
+        cancelledAt?: Date // date when the seat was cancelled, if applicable
+
+        // optional properties
+        createdAt?: Date // date when the seat was created
+        updatedAt?: Date // date when the seat was last updated
+    }
+
+    export type Program = {
+        id: string // unique identifier for the program
+        name: string // name of the program
+        description?: string // short description of the program
+        url?: string // URL to the program's page
+    }
+
+    export type SchoolContact = {
+        id: string // unique identifier for the contact
+        name: string // name of the contact person
+        email: string // email address of the contact person
+        phone?: string // phone number of the contact person
+        role?: string // role of the contact person within the school
+        sports?: string // sports the contact is associated with
+    }
+
+    type OrganizationType = 'school' | 'club' | 'league' | 'business' | 'other'
 
     type SchoolType = 'secondary' | 'prep_school' | 'cegep' | 'university' | 'other'
 

@@ -20,6 +20,10 @@ const links = [
         name: 'Events',
         href: '/events',
     },
+    {
+        name: 'Commands',
+        href: '/commands',
+    }
 ]
 
 export const Sidebar = () => {

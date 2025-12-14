@@ -15,26 +15,16 @@ export const mapEventTypeToDisplayName = (type: AXEventType): string => {
     }
 }
 
-export const mapOrganizationTypeToDisplayName = (
-    type: Organization['type'],
-    schoolType: Organization['schoolType']
-): string => {
+export const mapOrganizationTypeToDisplayName = (type: Organization['type']): string => {
     switch (type) {
         case 'school':
-            switch (schoolType) {
-                case 'secondary':
-                    return 'Secondary'
-                case 'prep_school':
-                    return 'Prep School'
-                case 'cegep':
-                    return 'Cégep'
-                case 'university':
-                    return 'University'
-                case 'other':
-                    return 'Other'
-            }
+            return 'School'
+        case 'club':
+            return 'Club'
         case 'league':
             return 'League'
+        case 'business':
+            return 'Business'
         case 'other':
             return 'Other'
     }
@@ -98,4 +88,3 @@ export const fromCityToDBCity = (c: City): DBCity => {
         countryCode: c.country.countryCode,
     }
 }
-

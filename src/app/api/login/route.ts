@@ -1,3 +1,4 @@
+import cookieConfig from '@/cookies.config'
 import { login } from '@/requests/auth'
 import { NextResponse } from 'next/server'
 
@@ -17,22 +18,13 @@ export async function POST(request: Request) {
     response.cookies.set({
         name: 'accessToken',
         value: apiRes.token,
-        httpOnly: true,
-        secure: true,
-        sameSite: 'none',
-        domain: '.athlete-x.io',
-        maxAge: 60 * 60 * 24 * 7, // 7 days
-        path: '/',
+        ...cookieConfig,
     })
 
     response.cookies.set({
         name: 'refreshToken',
         value: apiRes.refreshToken,
-        httpOnly: true,
-        secure: true,
-        sameSite: 'none',
-        domain: '.athlete-x.io',
-        maxAge: 60 * 60 * 24 * 30,
+        ...cookieConfig,
     })
 
     return response

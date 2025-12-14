@@ -6,13 +6,14 @@ import useSWR from 'swr'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { FormModal } from '@/components/forms/FormModal'
-import { OrganizationForm } from '@/components/forms/OrganizationForm'
 import { mapOrganizationTypeToDisplayName } from '@/mappers'
 import { orgFetcher } from '@/requests/orgs'
 import { AnimatePresence } from 'framer-motion'
 import { Spinner } from '@/components/ui/spinner'
 import { SearchInput } from '@/components/ui/search-input'
 import { ToggleSingle } from '@/components/ui/toggles'
+import { OrganizationForm } from '@/components/forms/OrganizationForm'
+import { InvitationForm } from '@/components/forms/InvitationForm'
 
 type ModalState = {
     open: boolean
@@ -23,7 +24,7 @@ type ModalState = {
 type LocationFilterOption = 'all' | 'can' | 'usa'
 
 const Organizations = () => {
-    const { data, error, isLoading } = useSWR<Organization[]>('/organizations', orgFetcher)
+    const { data, error, isLoading } = useSWR<Organization[]>('/v2/organizations/all', orgFetcher)
 
     const [filteredData, setFilteredData] = useState<Organization[]>(data || [])
     const [locationFilter, setLocationFilter] = useState<LocationFilterOption>('all')
@@ -33,6 +34,11 @@ const Organizations = () => {
         open: false,
         data: null,
         action: 'create',
+    })
+    const [inviteModal, setInviteModal] = useState({
+        open: false,
+        organizationId: '',
+        organizationName: '',
     })
 
     const openModal = (o: Organization | null, action: 'create' | 'update') => {
@@ -48,7 +54,9 @@ const Organizations = () => {
 
         const remainingOrgs = orgs.filter(org => {
             const nameMatch = org.name.toLowerCase().includes(searchValue.toLowerCase())
-            const cityMatch = org.location?.shortname?.toLowerCase().includes(searchValue.toLowerCase())
+            const cityMatch =
+                org.location?.shortname.toLowerCase().includes(searchValue.toLowerCase()) ||
+                org.location?.region?.regionCode.toLowerCase().includes(searchValue.toLowerCase())
 
             return nameMatch || cityMatch
         })
@@ -109,7 +117,7 @@ const Organizations = () => {
 
             {/* data table */}
             {error ? (
-                <div className="w-full h-full flex items-center justify-center">Error: {error}</div>
+                <div className="w-full h-full flex items-center justify-center">Error: {`${error}`}</div>
             ) : isLoading ? (
                 <div className="w-full h-full flex items-center justify-center">
                     <Spinner size={26} />
@@ -142,6 +150,18 @@ const Organizations = () => {
                             defaultValues={modal.data!}
                             action={modal.action}
                             closeModal={() => setModal({ ...modal, open: false, data: null })}
+                            openInviteModal={(organizationId: string, organizationName: string) =>
+                                setInviteModal({ open: true, organizationId, organizationName })
+                            }
+                        />
+                    </FormModal>
+                )}
+                {inviteModal.open && (
+                    <FormModal close={() => setInviteModal({ ...inviteModal, open: false })}>
+                        <InvitationForm
+                            organizationId={inviteModal.organizationId}
+                            organizationName={inviteModal.organizationName}
+                            closeModal={() => setInviteModal({ ...inviteModal, open: false })}
                         />
                     </FormModal>
                 )}
@@ -171,16 +191,11 @@ function TableRow({ index, organization: o, openModal }: TableRowProps) {
             onClick={() => openModal(o)}
         >
             <div className="col-span-5 text-black">{o.name}</div>
-            <div className="col-span-2 text-black">{mapOrganizationTypeToDisplayName(o.type, o?.schoolType)}</div>
+            <div className="col-span-2 text-black">{mapOrganizationTypeToDisplayName(o.type)}</div>
             <div className="col-span-2 text-black">
-                {o.location?.shortname}, {o.location.region?.regionCode}
+                {o?.location ? `${o.location?.shortname}, ${o?.location?.region?.regionCode}` : '-'}
             </div>
-            <div className="col-span-2 text-black">
-                <div className={`badge no-color-change cursor-pointer ${o.listed ? 'green' : 'red'}`}>
-                    <span className={`h-1.5 w-1.5 rounded-full ${o.listed ? 'bg-green' : 'bg-red'}`} />
-                    <span className="no-color-change">{o.listed ? 'Listed' : 'Unlisted'}</span>
-                </div>
-            </div>
+            <div className="col-span-2 text-black"></div>
             {o?.websiteUrl && (
                 <div className="col-span-1 text-black flex justify-end">
                     <a

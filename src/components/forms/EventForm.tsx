@@ -231,19 +231,21 @@ export const EventForm: FC<EventFormProps> = ({ defaultValues: e, action, closeM
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel>Event Type</FormLabel>
-                                <Dropdown
-                                    value={field.value}
-                                    onChange={field.onChange}
-                                    options={[
-                                        { value: 'combine', label: 'Combine' },
-                                        { value: 'training_camp', label: 'Training Camp' },
-                                        { value: 'competition', label: 'Competition' },
-                                        { value: 'tournament', label: 'Tournament' },
-                                        { value: 'showcase', label: 'Showcase' },
-                                        { value: 'other', label: 'Other' },
-                                    ]}
-                                    placeholder="Select an event type"
-                                />
+                                <FormControl>
+                                    <Dropdown
+                                        value={field.value}
+                                        onChange={field.onChange}
+                                        options={[
+                                            { value: 'combine', label: 'Combine' },
+                                            { value: 'training_camp', label: 'Training Camp' },
+                                            { value: 'competition', label: 'Competition' },
+                                            { value: 'tournament', label: 'Tournament' },
+                                            { value: 'showcase', label: 'Showcase' },
+                                            { value: 'other', label: 'Other' },
+                                        ]}
+                                        placeholder="Select an event type"
+                                    />
+                                </FormControl>
                                 <FormMessage />
                             </FormItem>
                         )}
