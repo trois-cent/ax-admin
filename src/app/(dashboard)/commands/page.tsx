@@ -8,8 +8,8 @@ import { api } from '@/requests/http'
 import { ArrowRight } from 'lucide-react'
 import { useState } from 'react'
 
-export const METHODS = ['post', 'get', 'put', 'patch', 'delete'] as const
-export type Method = (typeof METHODS)[number]
+const METHODS = ['post', 'get', 'put', 'patch', 'delete'] as const
+type Method = (typeof METHODS)[number]
 
 const Commands = () => {
     const [pwd, setPwd] = useState<string>('')
