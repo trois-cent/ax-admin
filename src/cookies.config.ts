@@ -15,7 +15,6 @@ const prodConfig: CookieConfig = {
     secure: true,
     domain: '.athlete-x.io',
     path: '/',
-    maxAge: 60 * 60 * 24 * 30,
 }
 
 const devConfig: CookieConfig = {
@@ -23,7 +22,6 @@ const devConfig: CookieConfig = {
     sameSite: 'lax',
     secure: false,
     path: '/',
-    maxAge: 60 * 60 * 24 * 30,
 }
 
 const cookieConfig: CookieConfig = env === 'prod' ? prodConfig : devConfig
